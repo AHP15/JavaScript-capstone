@@ -1,5 +1,6 @@
 import movie from './Movie';
 import getMovies from '../api/movieList';
+import getLikes from '../api/likeList';
 
 const alertError = (message) => {
   const main = document.getElementById('main');
@@ -14,20 +15,27 @@ const contentPending = () => {
   return content;
 };
 
-const contentLoaded = () => {
-  const movieCrads = document.querySelectorAll('.card-container');
-  getMovies().then((obj) => {
-    if (!obj.success) {
-      alertError(obj.message);
-    } else {
-      const movieList = obj.data.results;
-      movieCrads.forEach((movieCard, i) => {
-        const movieData = movieList[i];
-        movieCard.replaceChildren('');
-        movieCard.insertAdjacentHTML('beforeend', movie(movieData));
-      });
-    }
-  });
+const contentLoaded = async () => {
+  const main = document.getElementById('main');
+  const responses = await Promise.allSettled([getMovies(), getLikes()]);
+  const { data: data1, success: success1 } = responses[0].value;
+  const { data: data2, success: success2 } = responses[1].value;
+
+  if (success1 && success2) {
+    main.replaceChildren('');
+
+    const movieList = data1.results;
+    const likesList = data2;
+
+    let likes;
+    movieList.forEach((movieElement) => {
+      likes = likesList.find((ele) => ele.item_id === movieElement.id);
+      const movieData = { ...movieElement, likes: likes?.likes ?? 0 };
+      main.insertAdjacentHTML('beforeend', movie(movieData));
+    });
+  } else {
+    alertError(responses[0].value.message ?? responses[1].value.error);
+  }
 };
 
 const main = () => {
