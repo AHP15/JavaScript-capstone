@@ -4,6 +4,29 @@
   box-sizing: border-box;
 }
 
+#main {
+  margin: 0 auto;
+  width: 100vw;
+  max-width: 1200px;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+.error {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  background-color: rgba(255, 0, 0, 0.4);
+  border: 1px solid red;
+  border-radius: 5px;
+  color: red;
+  padding: 10px;
+}
+
 .footer {
   font-size: 18px;
   padding: 20px 30px;
