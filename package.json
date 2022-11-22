@@ -21,6 +21,10 @@
   "homepage": "https://github.com/Abdessittir/JavaScript-capstone#readme",
   "devDependencies": {
     "@babel/plugin-transform-modules-commonjs": "^7.19.6",
+    "@fortawesome/fontawesome-svg-core": "^6.2.1",
+    "@fortawesome/free-brands-svg-icons": "^6.2.1",
+    "@fortawesome/free-regular-svg-icons": "^6.2.1",
+    "@fortawesome/free-solid-svg-icons": "^6.2.1",
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.7.2",
     "dotenv-webpack": "^8.0.1",
@@ -40,6 +44,13 @@
     "webpack-dev-server": "^4.11.1"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "@babel/core": "^7.20.2",
+    "@fortawesome/fontawesome-free": "^6.2.1",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^9.1.0",
+    "file-loader": "^6.2.0",
+    "lodash": "^4.17.21",
+    "node-sass": "^8.0.0",
+    "sass-loader": "^13.2.0"
   }
 }
