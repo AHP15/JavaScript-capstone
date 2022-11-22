@@ -25,8 +25,8 @@ npm install
 ```
 3. create a `.env` file in your root directory and add to it two environment variables `MOVIES_URL`, `MOVIE_DETAIL_URL`, `API_KEY`, and `IMAGE_URL`, for more info visit the [API docs](https://www.themoviedb.org/)
 
-4. Run 
-```bash 
+1. Run the command
+```bash
 npm start
 ```
 
