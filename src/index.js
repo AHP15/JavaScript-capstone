@@ -7,4 +7,10 @@ import footer from './modules/footer';
 
 // movie image: `${process.env.IMAGE_URL}/imageId.jpg`
 
-document.querySelector('.footer').insertAdjacentHTML('beforeend', footer());
+const render = () => {
+  const footerEle = document.querySelector('.footer');
+  footerEle.replaceChildren('');
+  footerEle.insertAdjacentHTML('beforeend', footer());
+};
+
+render();
