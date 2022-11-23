@@ -27,6 +27,7 @@ const render = () => {
 
 render();
 
+// Mobile navigation
 const navMenuOpen = document.querySelector('.open');
 const navMenuClose = document.querySelector('.close');
 const list = document.querySelector('.list');

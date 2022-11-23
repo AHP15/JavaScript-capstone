@@ -1,5 +1,8 @@
 import movie from './Movie';
 import getMovies from '../api/movieList';
+
+import { displayModal, closeModal } from './displayModal';
+import getSingleMovie from '../api/getSingleMovie';
 import getLikes from '../api/likeList';
 
 const alertError = (message) => {
@@ -40,7 +43,20 @@ const contentLoaded = async () => {
 
 const main = () => {
   window.addEventListener('load', () => {
-    contentLoaded();
+    contentLoaded().then(() => {
+      const commentButtons = document.querySelectorAll('.comment-btn');
+      commentButtons.forEach((btn) => {
+        let details = '';
+        btn.addEventListener('click', (event) => {
+          getSingleMovie(event.target.dataset.id).then((obj) => {
+            details = obj.data;
+            const main = document.querySelector('#main');
+            main.insertAdjacentHTML('beforeend', displayModal(details));
+            closeModal();
+          });
+        });
+      });
+    });
   });
   return contentPending();
 };

@@ -13,6 +13,7 @@ const movie = (movie = null) => {
   if (!movie) {
     return sketelon();
   }
+
   const image = movie?.poster_path ?? movie?.backdrop_path;
   return `
       <div class="movie-card">
@@ -29,7 +30,7 @@ const movie = (movie = null) => {
           </div>
         </div>
 
-        <button data-id="${movie.id}" class="btn">Comments</button>
+        <button data-id="${movie.id}" class="btn comment-btn">Comments</button>
         <button class="btn">Reservations</button>
       </div>
     `;
