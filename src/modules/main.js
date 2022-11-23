@@ -1,7 +1,7 @@
 import movie from './Movie';
 import getMovies from '../api/movieList';
 import { displayModal, closeModal } from './displayModal';
-import { getSingleMovie } from '../api/getSingleMovie';
+import getSingleMovie from '../api/getSingleMovie';
 
 const alertError = (message) => {
   const main = document.getElementById('main');
@@ -10,11 +10,9 @@ const alertError = (message) => {
 
 const contentPending = () => {
   let content = '';
-  Array(20)
-    .fill(null)
-    .forEach(() => {
-      content += `<div class="card-container">${movie()}</div>`;
-    });
+  Array(20).fill(null).forEach(() => {
+    content += `<div class="card-container">${movie()}</div>`;
+  });
   return content;
 };
 

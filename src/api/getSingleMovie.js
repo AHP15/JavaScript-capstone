@@ -1,14 +1,12 @@
 const getSingleMovie = async (movieId) => {
   try {
-    const res = await fetch(
-      `${process.env.MOVIE_DETAIL_URL}/${movieId}?api_key=${process.env.API_KEY}`
-    );
+    const res = await fetch(`${process.env.MOVIE_DETAIL_URL}/${movieId}?api_key=${process.env.API_KEY}`);
     const data = await res.json();
     return {
       success: true,
       data,
     };
-  } catch {
+  } catch (err) {
     return {
       success: false,
       message: err?.message,
@@ -16,4 +14,4 @@ const getSingleMovie = async (movieId) => {
   }
 };
 
-export { getSingleMovie };
+export default getSingleMovie;
