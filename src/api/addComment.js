@@ -1,6 +1,6 @@
 const addComment = async (id, name, insight) => {
   try {
-    const res = await fetch(`${process.env.INVOLVMENT_URL}/apps/${process.env.APP_ID}`, {
+    const res = await fetch(`${process.env.INVOLVMENT_URL}/apps/${process.env.APP_ID}/comments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

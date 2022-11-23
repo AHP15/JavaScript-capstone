@@ -1,7 +1,7 @@
 import movie from './Movie';
 import getMovies from '../api/movieList';
 
-import { displayModal, closeModal } from './displayModal';
+import { displayModal, closeModal, injectComment } from './displayModal';
 import getSingleMovie from '../api/getSingleMovie';
 import getLikes from '../api/likeList';
 import addComment from '../api/addComment';
@@ -51,17 +51,19 @@ const main = () => {
           const movieID = event.target.dataset.id;
           getSingleMovie(movieID).then((obj) => {
             const main = document.querySelector('#main');
-            main.insertAdjacentHTML('beforeend', displayModal(obj.data, movieID));
+            main.insertAdjacentHTML('beforeend', displayModal(obj.data));
+            injectComment(movieID);
             closeModal();
 
             // Form event listener to create a comment
             const commentForm = document.querySelector('#form');
             const name = document.querySelector('#name');
             const insight = document.querySelector('#insight');
-            commentForm.addEventListener('submit', (event) => {
+            commentForm.addEventListener('submit', async (event) => {
               event.preventDefault();
-              addComment(movieID, name.value, insight.value);
+              await addComment(movieID, name.value, insight.value);
               commentForm.reset();
+              await injectComment(movieID);
             });
           });
         });
