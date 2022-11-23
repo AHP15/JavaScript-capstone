@@ -32,8 +32,8 @@
 
 .close {
   display: none;
-  z-index: 5;
   cursor: pointer;
+  z-index: 11;
 }
 
 .navbar ul {
@@ -48,6 +48,7 @@
   align-items: center;
   flex-direction: column;
   background-color: white;
+  z-index: 10;
 }
 
 .on {

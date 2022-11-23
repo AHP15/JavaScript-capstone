@@ -36,6 +36,7 @@ const contentLoaded = async () => {
       const movieData = { ...movieElement, likes: likes?.likes ?? 0 };
       main.insertAdjacentHTML('beforeend', movie(movieData));
     });
+    window.dispatchEvent(new CustomEvent('movies_loaded'));
   } else {
     alertError(responses[0].value.message ?? responses[1].value.error);
   }
