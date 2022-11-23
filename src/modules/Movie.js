@@ -13,7 +13,7 @@ const movie = (movie = null) => {
   if (!movie) {
     return sketelon();
   }
-  
+
   const image = movie?.poster_path ?? movie?.backdrop_path;
   return `
       <div class="movie-card">

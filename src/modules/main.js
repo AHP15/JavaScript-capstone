@@ -5,7 +5,6 @@ import { displayModal, closeModal } from './displayModal';
 import getSingleMovie from '../api/getSingleMovie';
 import getLikes from '../api/likeList';
 
-
 const alertError = (message) => {
   const main = document.getElementById('main');
   main.insertAdjacentHTML('beforeend', `<p class="error">${message}</p>`);
