@@ -18,6 +18,7 @@
   text-align: center;
   flex-direction: column;
   overflow: auto;
+  z-index: 6;
 }
 
 .picture {
@@ -36,12 +37,13 @@
   right: 5%;
 }
 
-.movie-info {
+.movie-information {
+  display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 50px;
 }
 
-.movie-info h2 {
+.movie-information h2 {
   font-size: 45px;
 }
 
@@ -49,9 +51,26 @@
   margin: 0 auto;
   text-align: left;
   display: grid;
-  width: 400px;
+  font-size: larger;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.comments {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+#comment-title {
+  font-size: 26px;
+}
+
+.list-of-comments {
+  width: 350px;
+  line-height: 30px;
+  text-align: left;
+  margin: 0 auto;
 }
 
 .comments li {
@@ -59,6 +78,8 @@
 }
 
 .comments form {
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
   gap: 40px;
