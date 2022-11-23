@@ -1,4 +1,5 @@
 import '../styles/movie.css';
+import heart from '../Assets/heart.png';
 
 const sketelon = () => `
 <div class="sketelone">
@@ -12,8 +13,8 @@ const movie = (movie = null) => {
   if (!movie) {
     return sketelon();
   }
-
-  const image = movie.poster_path ?? movie?.backdrop_path;
+  
+  const image = movie?.poster_path ?? movie?.backdrop_path;
   return `
       <div class="movie-card">
         <div class="image-container">
@@ -21,11 +22,11 @@ const movie = (movie = null) => {
         </div>
 
         <div class="movie-info">
-          <h4>${movie.original_title.slice(0, 20)}...</h4>
+          <h4>${movie.original_title.slice(0, 15)}...</h4>
 
           <div class="likes-container">
-            <img src="./test" alt="" />
-            <p>5 likes</p>
+            <img src="${heart}" alt="" />
+            <p>${movie.likes} likes</p>
           </div>
         </div>
 
