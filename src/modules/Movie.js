@@ -9,11 +9,20 @@ const sketelon = () => `
 </div>
 `;
 
+const handleHeartClick = () => {
+  console.log('test');
+};
+
 const movie = (movie = null) => {
   if (!movie) {
     return sketelon();
   }
+
   const image = movie?.poster_path ?? movie?.backdrop_path;
+
+  window.addEventListener('movies_loaded', () => {
+  });
+
   return `
       <div class="movie-card">
         <div class="image-container">
@@ -24,7 +33,7 @@ const movie = (movie = null) => {
           <h4>${movie.original_title.slice(0, 15)}...</h4>
 
           <div class="likes-container">
-            <img src="${heart}" alt="" />
+            <img class="like-btn" src="${heart}" alt="like ${movie.original_title}" />
             <p>${movie.likes} likes</p>
           </div>
         </div>

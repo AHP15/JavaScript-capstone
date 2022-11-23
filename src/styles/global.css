@@ -33,8 +33,8 @@
 
 .close {
   display: none;
-  z-index: 5;
   cursor: pointer;
+  z-index: 11;
 }
 
 .navbar ul {
@@ -50,6 +50,7 @@
   flex-direction: column;
   justify-content: space-around;
   background-color: white;
+  z-index: 10;
 }
 
 .on {
