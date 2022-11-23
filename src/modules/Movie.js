@@ -13,11 +13,13 @@ const movie = (movie = null) => {
     return sketelon();
   }
 
-  const image = movie?.poster_path ?? movie?.backdrop_path;
+  const image = movie.poster_path ?? movie?.backdrop_path;
   return `
       <div class="movie-card">
         <div class="image-container">
-          <img src=${`${process.env.IMAGE_URL}/${image}`} alt="${movie.original_title}" />
+          <img src=${`${process.env.IMAGE_URL}/${image}`} alt="${
+    movie.original_title
+  }" />
         </div>
 
         <div class="movie-info">
