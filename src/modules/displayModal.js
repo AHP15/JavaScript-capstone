@@ -33,13 +33,14 @@ const displayModal = (details) => {
         <li>I really enjoyed the movie</li>
         <li>yeah same here</li>
       </ul>
-      <form action="">
+      <form action="" id="form">
         <h3>Add a comment</h3>
-        <input type="text" required placeholder="Your name" />
+        <input id="name" type="text" required placeholder="Your name" />
         <textarea
-          id=""
+          id="insight"
           cols="30"
           rows="5"
+          required
           placeholder="Your insights"
         ></textarea>
         <input type="submit" value="Comment" />
