@@ -30,7 +30,7 @@ const movie = (movie = null) => {
           </div>
         </div>
 
-        <button data-id="${movie.id}" class="btn">Comments</button>
+        <button data-id="${movie.id}" class="btn comment-btn">Comments</button>
         <button class="btn">Reservations</button>
       </div>
     `;

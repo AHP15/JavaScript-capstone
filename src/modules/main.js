@@ -43,16 +43,18 @@ const contentLoaded = async () => {
 
 const main = () => {
   window.addEventListener('load', () => {
-    contentLoaded();
-    const commentButtons = document.querySelectorAll('.card-container');
-    commentButtons.forEach((btn) => {
-      let details = '';
-      btn.addEventListener('click', (event) => {
-        getSingleMovie(event.target.dataset.id).then((obj) => {
-          details = obj.data;
-          const main = document.querySelector('#main');
-          main.insertAdjacentHTML('beforeend', displayModal(details));
-          closeModal();
+    contentLoaded().then(() => {
+      const commentButtons = document.querySelectorAll('.comment-btn');
+      commentButtons.forEach((btn) => {
+        let details = '';
+        btn.addEventListener('click', (event) => {
+          console.log('hi');
+          getSingleMovie(event.target.dataset.id).then((obj) => {
+            details = obj.data;
+            const main = document.querySelector('#main');
+            main.insertAdjacentHTML('beforeend', displayModal(details));
+            closeModal();
+          });
         });
       });
     });
