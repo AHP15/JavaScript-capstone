@@ -16,14 +16,15 @@ const movie = (movie = null) => {
   }
 
   const image = movie?.poster_path ?? movie?.backdrop_path;
-
   window.addEventListener('movies_loaded', () => {
     const likeBtn = document.getElementById(`img_${movie.id}`);
     const likeNumber = document.getElementById(`number_${movie.id}`);
-    likeBtn.addEventListener('click', () => {
-      likeNumber.textContent = Number(likeNumber.textContent) + 1;
-      addLike(movie.id);
-    });
+    if (likeBtn && likeNumber) {
+      likeBtn.addEventListener('click', () => {
+        likeNumber.textContent = Number(likeNumber.textContent) + 1;
+        addLike(movie.id);
+      });
+    }
   });
 
   return `
@@ -35,6 +36,7 @@ const movie = (movie = null) => {
 
         <div class="movie-info-holder">  
           <h4>${movie.original_title.slice(0, 15)}...</h4>
+
           <div class="likes-container">
             <img id="img_${movie.id}" src="${heart2}" alt="like ${movie.original_title}" />
             <p><span id="number_${movie.id}">${movie.likes}</span></p>

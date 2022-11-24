@@ -118,6 +118,7 @@
 
 .list-of-comments li:nth-child(even) {
   background-color: #f2f2f2;
+  color: black;
   border-collapse: collapse;
 }
 

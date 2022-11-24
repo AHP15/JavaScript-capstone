@@ -1,5 +1,4 @@
 node_modules
-.dist
 .env
 comment-counter.test.js
 createDocumentMock.js

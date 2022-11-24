@@ -1,7 +1,8 @@
-const getMovies = async () => {
+const getLastest = async () => {
   try {
-    const res = await fetch(`${process.env.MOVIES_URL}?api_key=${process.env.API_KEY}&page=3`);
+    const res = await fetch(`${process.env.LASTEST_URL}?api_key=${process.env.API_KEY}`);
     const data = await res.json();
+    console.log(data);
     return {
       success: true,
       data,
@@ -14,4 +15,4 @@ const getMovies = async () => {
   }
 };
 
-export default getMovies;
+export default getLastest;
