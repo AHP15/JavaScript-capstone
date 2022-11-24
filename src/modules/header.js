@@ -2,7 +2,7 @@ import itemCounter from './itemCounter';
 
 const Header = () => {
   window.addEventListener('movies_loaded', () => {
-    itemCounter();
+    itemCounter(document);
   });
 
   return `<div id="logo"></div>
