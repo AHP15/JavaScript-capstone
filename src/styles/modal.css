@@ -30,7 +30,7 @@
   padding-top: 50px;
   position: absolute;
   top: 0;
-  width: 100vw;
+  width: 100%;
   left: 0;
   color: white;
   backdrop-filter: blur(10px);
@@ -56,6 +56,10 @@
   cursor: pointer;
   top: 5%;
   right: 5%;
+}
+
+.modal-close:hover {
+  color: red;
 }
 
 .movie-information {
@@ -125,6 +129,7 @@
 .comments form {
   margin: 20px auto;
   display: flex;
+  width: 60%;
   flex-direction: column;
   gap: 40px;
 }
@@ -134,30 +139,42 @@
   margin-top: 10px;
 }
 
-input[type='submit'],
-input[type='text'] {
-  padding: 15px;
-  width: 200px;
-  border: none;
+.input-fields {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
 }
 
 input[type='text'] {
+  flex: 1;
+  padding: 15px;
+  border: none;
   outline: none;
+  color: white;
+  background-color: transparent;
   border-bottom: 1px solid black;
-  background-color: lightblue;
 }
 
 input[type='submit'] {
+  padding: 15px;
+  border: none;
   border-radius: 5px;
   width: 120px;
 }
 
 textarea {
+  flex: 1;
+  color: white;
   border: none;
-  background-color: lightblue;
   border-bottom: 1px solid black;
+  background-color: transparent;
   outline: none;
   padding: 15px;
+}
+
+input[type='text']:focus,
+textarea:focus {
+  background-color: lightblue;
 }
 
 @media screen and (min-width: 576px) {

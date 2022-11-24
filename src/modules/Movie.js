@@ -14,6 +14,7 @@ const movie = (movie = null) => {
   if (!movie) {
     return sketelon();
   }
+  // console.log(movie)
 
   const image = movie?.poster_path ?? movie?.backdrop_path;
   window.addEventListener('movies_loaded', () => {
@@ -35,7 +36,7 @@ const movie = (movie = null) => {
        <div class="movie-info">
 
         <div class="movie-info-holder">  
-          <h4>${movie.original_title.slice(0, 15)}...</h4>
+          <h4>${movie.title || movie.original_name}</h4>
 
           <div class="likes-container">
             <img id="img_${movie.id}" src="${heart2}" alt="like ${movie.original_title}" />
