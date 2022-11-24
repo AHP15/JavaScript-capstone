@@ -1,5 +1,5 @@
 import '../styles/movie.css';
-import heart from '../Assets/heart.png';
+import heart2 from '../Assets/heart2.png';
 import addLike from '../api/addLike';
 
 const sketelon = () => `
@@ -31,18 +31,20 @@ const movie = (movie = null) => {
         <div class="image-container">
           <img src=${`${process.env.IMAGE_URL}/${image}`} alt="${movie.original_title}" />
         </div>
+       <div class="movie-info">
 
-        <div class="movie-info">
+        <div class="movie-info-holder">  
           <h4>${movie.original_title.slice(0, 15)}...</h4>
-
           <div class="likes-container">
-            <img id="img_${movie.id}" src="${heart}" alt="like ${movie.original_title}" />
-            <p><span id="number_${movie.id}">${movie.likes}</span> likes</p>
+            <img id="img_${movie.id}" src="${heart2}" alt="like ${movie.original_title}" />
+            <p><span id="number_${movie.id}">${movie.likes}</span></p>
           </div>
-        </div>
-
-        <button data-id="${movie.id}" class="btn comment-btn">Comments</button>
-        <button class="btn">Reservations</button>
+         </div>
+         <div class="buttons-holder">
+         <button data-id="${movie.id}" class="btn comment-btn">Comments</button>
+         <button class="btn">Reservations</button>
+         </div>
+       </div>
       </div>
     `;
 };

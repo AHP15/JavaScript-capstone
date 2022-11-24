@@ -19,7 +19,7 @@ const injectComment = async (movieID) => {
     comments.data.forEach((comment) => {
       const newComment = document.createElement('li');
       newComment.className = 'comment-item';
-      newComment.innerHTML = `${comment.creation_date}, ${comment.username}: ${comment.comment}`;
+      newComment.innerHTML = `<strong>${comment.creation_date}/ <span id="commentter-name">${comment.username}</span>:</strong> ${comment.comment}`;
       list.append(newComment);
     });
   }
@@ -28,8 +28,9 @@ const injectComment = async (movieID) => {
 const displayModal = (details) => {
   const image = details.poster_path ?? details?.backdrop_path;
 
-  return `<div class="modal-window">
-    <div class="picture">
+  return `<div class="modal-window" style="background-image: url(${process.env.IMAGE_URL}/${image})";>
+  <div class="wrapper">  
+  <div class="picture">
     <img src="${process.env.IMAGE_URL}/${image}" alt="${
   details.original_title
 }" />
@@ -62,9 +63,10 @@ const displayModal = (details) => {
         ></textarea>
         <input type="submit" value="Comment" />
         </form>
-        </div>
-        </div>
-        </div>`;
+      </div>
+    </div>
+  </div>
+</div>`;
 };
 
 export { displayModal, closeModal, injectComment };
