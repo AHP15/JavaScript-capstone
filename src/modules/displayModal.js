@@ -18,6 +18,7 @@ const injectComment = async (movieID) => {
     }
     comments.data.forEach((comment) => {
       const newComment = document.createElement('li');
+      newComment.className = 'comment-item';
       newComment.innerHTML = `${comment.creation_date}, ${comment.username}: ${comment.comment}`;
       list.append(newComment);
     });
@@ -45,7 +46,7 @@ const displayModal = (details) => {
       <p><strong>Ratings:</strong> ${details.vote_average}</p>
     </div>
     <div class="comments">
-    <h3 id="comment-title">Comments</h3>
+    <h3 id="comment-title">Comments(0)</h3>
     <ul class="list-of-comments">
     How was the movie?
         </ul>
