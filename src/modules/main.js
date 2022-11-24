@@ -67,6 +67,7 @@ const main = () => {
               await addComment(movieID, name.value, insight.value);
               commentForm.reset();
               await injectComment(movieID);
+              commentCounter();
             });
           });
         });
