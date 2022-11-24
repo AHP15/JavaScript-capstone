@@ -18,6 +18,7 @@ const injectComment = async (movieID) => {
     }
     comments.data.forEach((comment) => {
       const newComment = document.createElement('li');
+      newComment.className = 'comment-item';
       newComment.innerHTML = `${comment.creation_date}, ${comment.username}: ${comment.comment}`;
       list.append(newComment);
     });

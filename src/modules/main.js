@@ -5,6 +5,7 @@ import { displayModal, closeModal, injectComment } from './displayModal';
 import getSingleMovie from '../api/getSingleMovie';
 import getLikes from '../api/likeList';
 import addComment from '../api/addComment';
+import { commentCounter } from './commentCounter';
 
 const alertError = (message) => {
   const main = document.getElementById('main');
@@ -50,11 +51,12 @@ const main = () => {
       commentButtons.forEach((btn) => {
         btn.addEventListener('click', (event) => {
           const movieID = event.target.dataset.id;
-          getSingleMovie(movieID).then((obj) => {
+          getSingleMovie(movieID).then(async (obj) => {
             const main = document.querySelector('#main');
             main.insertAdjacentHTML('beforeend', displayModal(obj.data));
-            injectComment(movieID);
             closeModal();
+            await injectComment(movieID);
+            commentCounter();
 
             // Form event listener to create a comment
             const commentForm = document.querySelector('#form');
