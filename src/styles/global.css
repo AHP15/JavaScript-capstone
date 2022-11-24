@@ -138,6 +138,7 @@ body {
     display: flex;
     position: static;
     height: 50px;
+    background-color: transparent;
     flex-direction: row;
   }
 }
