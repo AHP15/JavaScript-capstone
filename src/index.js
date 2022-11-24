@@ -7,6 +7,7 @@ import footer from './modules/footer';
 import Header from './modules/header';
 
 import main from './modules/main';
+import { menuCloser, menuOpener } from './modules/navMenuCloser';
 
 // list of movies: `${process.env.MOVIES_URL}?api_key=${process.env.API_KEY}`
 
@@ -41,16 +42,11 @@ render();
 // Mobile navigation
 const navMenuOpen = document.querySelector('.open');
 const navMenuClose = document.querySelector('.close');
-const list = document.querySelector('.list');
 
 navMenuOpen.addEventListener('click', () => {
-  list.classList.add('on');
-  navMenuOpen.style.display = 'none';
-  navMenuClose.style.display = 'block';
+  menuOpener();
 });
 
 navMenuClose.addEventListener('click', () => {
-  list.classList.remove('on');
-  navMenuOpen.style.display = 'block';
-  navMenuClose.style.display = 'none';
+  menuCloser();
 });
