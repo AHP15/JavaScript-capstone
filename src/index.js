@@ -20,7 +20,18 @@ const render = () => {
   const footerEle = document.querySelector('.footer');
   const mainEle = document.getElementById('main');
 
-  mainEle.insertAdjacentHTML('beforeend', main());
+  window.addEventListener('load', () => {
+    window.addEventListener('load_content', (e) => {
+      mainEle.insertAdjacentHTML('beforeend', main(e.detail.home));
+    });
+
+    window.dispatchEvent(new CustomEvent('load_content', {
+      detail: {
+        home: true,
+      },
+    }));
+  });
+
   footerEle.replaceChildren('');
   footerEle.insertAdjacentHTML('beforeend', footer());
 };
