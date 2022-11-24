@@ -42,6 +42,7 @@
 }
 
 .picture img {
+  margin-top: 30px;
   height: 50vh;
   transition: all 0.5s;
 }
@@ -129,9 +130,9 @@
 .comments form {
   margin: 20px auto;
   display: flex;
-  width: 60%;
   flex-direction: column;
   gap: 40px;
+  width: 90%;
 }
 
 .comments h3 {
@@ -164,6 +165,7 @@ input[type='submit'] {
 
 textarea {
   flex: 1;
+  margin-left: 10px;
   color: white;
   border: none;
   border-bottom: 1px solid black;
@@ -180,6 +182,10 @@ textarea:focus {
 @media screen and (min-width: 576px) {
   .modal-window {
     padding: 5% 20%;
+  }
+
+  .comments form {
+    width: 60%;
   }
 
   .modal-close {
