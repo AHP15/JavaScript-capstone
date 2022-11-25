@@ -1,0 +1,5 @@
+node_modules
+.env
+comment-counter.test.js
+createDocumentMock.js
+coverage
