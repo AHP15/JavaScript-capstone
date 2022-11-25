@@ -4,7 +4,9 @@ import '../styles/modal.css';
 const closeModal = () => {
   const closeBtn = document.querySelector('.modal-close');
   const main = document.querySelector('#main');
+  const body = document.querySelector('body');
   closeBtn.addEventListener('click', () => {
+    body.style.overflow = 'auto';
     main.removeChild(main.lastChild);
   });
 };
@@ -19,17 +21,21 @@ const injectComment = async (movieID) => {
     comments.data.forEach((comment) => {
       const newComment = document.createElement('li');
       newComment.className = 'comment-item';
-      newComment.innerHTML = `${comment.creation_date}, ${comment.username}: ${comment.comment}`;
+      newComment.innerHTML = `<strong>${comment.creation_date}/ <span id="commentter-name">${comment.username}</span>:</strong> ${comment.comment}`;
       list.append(newComment);
     });
   }
 };
 
 const displayModal = (details) => {
+  const body = document.querySelector('body');
+  body.style.overflow = 'hidden';
+
   const image = details.poster_path ?? details?.backdrop_path;
 
-  return `<div class="modal-window">
-    <div class="picture">
+  return `<div class="modal-window" style="background-image: url(${process.env.IMAGE_URL}/${image})";>
+  <div class="wrapper">  
+  <div class="picture">
     <img src="${process.env.IMAGE_URL}/${image}" alt="${
   details.original_title
 }" />
@@ -52,19 +58,20 @@ const displayModal = (details) => {
         </ul>
         <form id="form">
         <h3>Add a comment</h3>
-        <input id="name" type="text" required placeholder="Your name" />
-        <textarea
+        <div class="input-fields"><i class="fas fa-user-plus fa-3x"></i><input id="name" type="text" required placeholder="Your name" /></div>
+        <div class="input-fields"><i class="fas fa-message fa-2x"></i><textarea
         id="insight"
         cols="30"
-        rows="5"
+        rows="3"
         required
           placeholder="Your insights"
-        ></textarea>
+        ></textarea></div>
         <input type="submit" value="Comment" />
         </form>
-        </div>
-        </div>
-        </div>`;
+      </div>
+    </div>
+  </div>
+</div>`;
 };
 
 export { displayModal, closeModal, injectComment };

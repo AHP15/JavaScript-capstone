@@ -1,4 +1,5 @@
 import itemCounter from './itemCounter';
+import { menuCloser } from './navMenuCloser';
 
 const Header = () => {
   window.addEventListener('movies_loaded', () => {
@@ -10,6 +11,7 @@ const Header = () => {
     const lastestLink = document.querySelector('.last-movies');
 
     moviesLink.addEventListener('click', () => {
+      menuCloser();
       window.dispatchEvent(new CustomEvent('load_content', {
         detail: {
           home: true,
@@ -18,6 +20,7 @@ const Header = () => {
     });
 
     lastestLink.addEventListener('click', () => {
+      menuCloser();
       window.dispatchEvent(new CustomEvent('load_content', {
         detail: {
           home: false,

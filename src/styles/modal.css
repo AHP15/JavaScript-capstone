@@ -8,6 +8,8 @@
 
 .modal-window {
   position: fixed;
+  background-size: cover;
+  background-position: center;
   width: 100%;
   background-color: white;
   height: 100%;
@@ -24,12 +26,23 @@
   z-index: 6;
 }
 
+.wrapper {
+  padding-top: 50px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  left: 0;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
 .picture {
   height: 55vh;
   margin: 0 auto;
 }
 
 .picture img {
+  margin-top: 30px;
   height: 50vh;
   transition: all 0.5s;
 }
@@ -44,6 +57,10 @@
   cursor: pointer;
   top: 5%;
   right: 5%;
+}
+
+.modal-close:hover {
+  color: red;
 }
 
 .movie-information {
@@ -91,15 +108,22 @@
   margin: 0 auto;
 }
 
+#commentter-name {
+  color: red;
+  font-weight: 100;
+}
+
 .list-of-comments li {
   font-style: normal;
   margin: 10px 0;
   padding: 5px;
   list-style: none;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .list-of-comments li:nth-child(even) {
   background-color: #f2f2f2;
+  color: black;
   border-collapse: collapse;
 }
 
@@ -108,6 +132,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  width: 90%;
 }
 
 .comments h3 {
@@ -115,30 +140,52 @@
   margin-top: 10px;
 }
 
-input[type='submit'],
-input[type='text'] {
-  padding: 15px;
-  width: 200px;
-  outline: none;
-  border: none;
+.input-fields {
+  display: flex;
+  justify-content: left;
+  gap: 15px;
 }
 
 input[type='text'] {
+  flex: 1;
+  padding: 15px;
+  border: none;
+  outline: none;
+  color: white;
+  background-color: transparent;
   border-bottom: 1px solid black;
-  background-color: lightblue;
+}
+
+input[type='submit'] {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 120px;
 }
 
 textarea {
+  flex: 1;
+  margin-left: 10px;
+  color: white;
   border: none;
-  background-color: lightblue;
   border-bottom: 1px solid black;
+  background-color: transparent;
   outline: none;
   padding: 15px;
+}
+
+input[type='text']:focus,
+textarea:focus {
+  background-color: lightblue;
 }
 
 @media screen and (min-width: 576px) {
   .modal-window {
     padding: 5% 20%;
+  }
+
+  .comments form {
+    width: 60%;
   }
 
   .modal-close {

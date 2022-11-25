@@ -43,7 +43,7 @@ npm start
 * Twitter: [@AbdessittirHar1](https://twitter.com/AbdessittirHar1)
 * LinkedIn: [Abdessittir Harkati](https://www.linkedin.com/in/abdessittir-harkati-a61b7324a/)
 
-* GitHub: [@yonas44](https://github.com/Abdessittir)
+* GitHub: [@yonas44](https://github.com/yonas44)
 * LinkedIn: [Yonas Tesfu](linkedin.com/in/yonas-tesfu-3284811a9)
 
 ## Contributing
@@ -53,3 +53,9 @@ Feel free to check the [issues page](https://github.com/Abdessittir/JavaScript-c
 
 ## Show your support
 Give a ⭐️ if you like this project!
+
+## 📝 License
+
+This project is [MIT](./MIT.md) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
