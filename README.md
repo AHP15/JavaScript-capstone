@@ -53,7 +53,7 @@ This is a movie application that lets users choose between different movies to w
 
 ## Video description <a name="video"></a>
 
-You can find a video description of our project [here](https://drive.google.com/file/d/1UUzzP7FXdpw9hNdlCKP4KoaxuJm-YXyh/view?usp=sharing)👈😁
+We built the application following the requirements from the github projects [`Kanban board`](https://github.com/Abdessittir/JavaScript-capstone/projects/1), which we enjoyed using.😍 You can find a video description of our project [here](https://drive.google.com/file/d/1UUzzP7FXdpw9hNdlCKP4KoaxuJm-YXyh/view?usp=sharing)👈😁
 
 
 ## 🛠 Built With <a name="built-with"></a>
