@@ -1,6 +1,6 @@
 # Movies App
 
-This a SPA website that display data about movies from an external API, created with ES6 and webpack (this branch is for review)
+This a SPA website that display data about movies from an external API, created with ES6 and webpack.
 
 # Live Demo
 
@@ -12,6 +12,21 @@ Not for now
 * JavaScript (ES6/ES7..)
 * webpack
 * API
+
+<p align="center">
+  <img style="width: 80%" src="./src/Assets/big1.png" />
+</p>
+
+<div align="center"> 
+
+  <span align="left" style="width: 250px">
+     <img style="width: 200px" src="./src/Assets/small 1.png" />
+  </span>
+
+  <span align="right">
+     <img style="width: 200px" src="./src/Assets/small 2.png" />
+  </span>
+</div>
 
 # Getting Started (Setup)
 
