@@ -57,6 +57,7 @@ We built the application following the requirements from the github projects [`K
 
 ## PULL REQUESTS
 [pull request](https://github.com/Abdessittir/JavaScript-capstone/pull/27)
+[pull request-2](https://github.com/Abdessittir/JavaScript-capstone/pull/22)
 
 ## 🛠 Built With <a name="built-with"></a>
 
