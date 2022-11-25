@@ -1,6 +1,6 @@
 # Movies App
 
-This a SPA website that display data about movies from an external API, created with ES6 and webpack
+This a SPA website that display data about movies from an external API, created with ES6 and webpack (this branch is for review)
 
 # Live Demo
 
