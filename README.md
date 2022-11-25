@@ -4,7 +4,7 @@ This a SPA website that display data about movies from an external API, created 
 
 # Live Demo
 
-Not for now
+[See Demo](https://abdessittir.github.io/JavaScript-capstone/dist/)
 
 # Buit with
 
