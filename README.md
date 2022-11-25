@@ -13,6 +13,7 @@
 # 📗 Table of Contents
 
 - [📖 About the Project](#about-project)
+  - [🎦 Video Description](#video) 
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
@@ -48,7 +49,11 @@
 <!-- PROJECT DESCRIPTION -->
 
 # 📖 [MOVIEX] <a name="about-project"></a>
-This is a movie application that lets users choose between different movies to watch based on the number of likes and comments. Built with ES6 and webpack
+This is a movie application that lets users choose between different movies to watch based on the number of likes and comments. Built with ES6 and webpack. 
+
+## Video description <a name="video"></a>
+
+You can find a video description of our project [here](https://drive.google.com/file/d/1UUzzP7FXdpw9hNdlCKP4KoaxuJm-YXyh/view?usp=sharing)👈😁
 
 
 ## 🛠 Built With <a name="built-with"></a>
